@@ -1,11 +1,12 @@
 'use client'
 
+import React from 'react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import SectionHeader from '@/components/ui/SectionHeader'
 import { FiMail, FiLinkedin, FiGithub, FiMapPin } from 'react-icons/fi'
+import SectionHeading from '../ui/SectionHeading'
 
-export default function ContactSection() {
+const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -49,22 +50,11 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-slate-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
+      <div className="container mx-auto px-4">
+        <SectionHeading title="Get in Touch" icon={FiMail} />
+        
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Get In Touch
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full" />
-          </motion.div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <motion.div
@@ -179,4 +169,6 @@ export default function ContactSection() {
       </div>
     </section>
   )
-} 
+}
+
+export default ContactSection 

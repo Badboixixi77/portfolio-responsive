@@ -26,6 +26,12 @@ export default function Navigation() {
     }
   }, [isMenuOpen])
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${
       isScrolled 
@@ -54,19 +60,31 @@ export default function Navigation() {
           </Link>
           
           <div className="hidden md:flex items-center gap-8">
-            <a href="#about" className="relative group">
+            <a 
+              href="#about" 
+              className="relative group"
+              onClick={(e) => handleNavClick(e, 'about')}
+            >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-x">
                 About
               </span>
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </a>
-            <a href="#skills" className="relative group">
+            <a 
+              href="#skills" 
+              className="relative group"
+              onClick={(e) => handleNavClick(e, 'skills')}
+            >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-x">
                 Skills
               </span>
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </a>
-            <a href="#projects" className="relative group">
+            <a 
+              href="#projects" 
+              className="relative group"
+              onClick={(e) => handleNavClick(e, 'projects')}
+            >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-x">
                 Projects
               </span>
@@ -139,11 +157,7 @@ export default function Navigation() {
                   transition={{ delay: 0.1 }}
                   href="#about"
                   className="relative group text-2xl"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-                    setIsMenuOpen(false);
-                  }}
+                  onClick={(e) => handleNavClick(e, 'about')}
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-x">
                     About
@@ -156,11 +170,7 @@ export default function Navigation() {
                   transition={{ delay: 0.15 }}
                   href="#skills"
                   className="relative group text-2xl"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
-                    setIsMenuOpen(false);
-                  }}
+                  onClick={(e) => handleNavClick(e, 'skills')}
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-x">
                     Skills
@@ -173,11 +183,7 @@ export default function Navigation() {
                   transition={{ delay: 0.2 }}
                   href="#projects"
                   className="relative group text-2xl"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-                    setIsMenuOpen(false);
-                  }}
+                  onClick={(e) => handleNavClick(e, 'projects')}
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-x">
                     Projects

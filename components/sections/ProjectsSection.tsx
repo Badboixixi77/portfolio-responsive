@@ -2,54 +2,28 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { FiCode, FiGithub, FiExternalLink } from 'react-icons/fi'
 import Image from 'next/image'
+import SectionHeading from '../ui/SectionHeading'
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A modern e-commerce platform built with Next.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.',
-    image: '/projects/ecommerce.jpg',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-    github: 'https://github.com/yourusername/ecommerce',
-    live: 'https://ecommerce-demo.com',
-  },
-  {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-    image: '/projects/taskmanager.jpg',
-    technologies: ['React', 'Firebase', 'Material-UI', 'Redux'],
-    github: 'https://github.com/yourusername/taskmanager',
-    live: 'https://taskmanager-demo.com',
-  },
-  {
-    title: 'Portfolio Website',
-    description: 'A modern portfolio website showcasing projects and skills, built with Next.js and Tailwind CSS.',
-    image: '/projects/portfolio.jpg',
-    technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    github: 'https://github.com/yourusername/portfolio',
-    live: 'https://portfolio-demo.com',
-  },
+    title: 'BuySome E-Commerce',
+    description: 'A modern e-commerce platform built with Next.js, featuring product listings, shopping cart functionality, and a responsive design.',
+    image: '/buysome.png',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'JavaScript', 'Vercel'],
+    github: 'https://github.com/Badboixixi77/buysome.git',
+    live: 'https://buysome.vercel.app',
+  }
 ]
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 bg-slate-950">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 bg-slate-900">
+      <div className="container mx-auto px-4">
+        <SectionHeading title="Featured Projects" icon={FiCode} />
+        
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Featured Projects
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full" />
-          </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
