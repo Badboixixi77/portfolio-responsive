@@ -14,6 +14,14 @@ const projects = [
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'JavaScript', 'Vercel'],
     github: 'https://github.com/Badboixixi77/buysome.git',
     live: 'https://buysome.vercel.app',
+  },
+  {
+    title: 'Kama - Artist EPK',
+    description: 'An Electronic Press Kit (EPK) for a Nigerian artist, showcasing music, biography, press materials, and upcoming events in a modern, interactive format.',
+    image: '/kama.png',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript', 'Vercel'],
+    github: 'https://github.com/Badboixixi77/kama-main.git',
+    live: 'https://kama-main.vercel.app',
   }
 ]
 
